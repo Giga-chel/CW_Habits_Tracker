@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "pythonproject13"
+version = "0.1.0"
+description = ""
+authors = ["Eugen <trushin00332211@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.14"
+django = ">=5.2.0,<5.3.0"
+djangorestframework = "^3.18.1"
+djangorestframework-simplejwt = "^5.5.1"
+django-environ = "^0.14.0"
+psycopg2-binary = "^2.9.13"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "flake8 (>=7.3.0,<8.0.0)",
+    "black (>=26.5.1,<27.0.0)",
+    "isort (>=9.0.1,<10.0.0)",
+    "coverage (>=7.16.1,<8.0.0)"
+]
