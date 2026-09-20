@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "users",
     "habits",
     "drf_spectacular",
+    "telegram_bot",
 ]
 
 AUTH_USER_MODEL = "users.User"
@@ -121,3 +122,7 @@ SPECTACULAR_SETTINGS = {
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
 }
+
+# Telegram
+TELEGRAM_BOT_TOKEN = env("TELEGRAM_BOT_TOKEN", default="")
+TELEGRAM_BOT_NAME = env("TELEGRAM_BOT_NAME", default="habit_tracker_bot")
