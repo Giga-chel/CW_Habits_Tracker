@@ -1,3 +1,2 @@
-from django.db import models
-
-# Create your models here.
+# Приложение telegram_bot работает с моделями других приложений
+# и собственных моделей не имеет.

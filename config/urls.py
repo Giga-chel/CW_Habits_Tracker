@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import include, path
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 
-import config.schema
+import config.schema  # noqa: F401
 
 urlpatterns = [
     path("admin/", admin.site.urls),

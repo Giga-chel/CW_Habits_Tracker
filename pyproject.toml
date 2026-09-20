@@ -32,3 +32,23 @@ dev = [
     "isort (>=9.0.1,<10.0.0)",
     "coverage (>=7.16.1,<8.0.0)"
 ]
+
+[tool.black]
+line-length = 119
+extend-exclude = "/migrations/"
+
+[tool.isort]
+profile = "black"
+line_length = 119
+skip_glob = ["*/migrations/*"]
+
+[tool.coverage.run]
+source = ["config", "users", "habits", "telegram_bot"]
+omit = [
+    "*/migrations/*",
+    "*/tests.py",
+    "manage.py",
+    "config/wsgi.py",
+    "config/asgi.py",
+    "telegram_bot/management/*",
+]

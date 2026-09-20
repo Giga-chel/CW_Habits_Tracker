@@ -34,8 +34,7 @@ def link_chat_id(email, chat_id):
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     """Обработчик /start: просит email для привязки аккаунта."""
     await update.effective_message.reply_text(
-        "Привет! Это бот сервиса полезных привычек.\n"
-        "Отправьте email вашего аккаунта, чтобы получать напоминания."
+        "Привет! Это бот сервиса полезных привычек.\n" "Отправьте email вашего аккаунта, чтобы получать напоминания."
     )
     return WAITING_FOR_EMAIL
 

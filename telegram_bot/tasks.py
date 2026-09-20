@@ -11,10 +11,7 @@ logger = logging.getLogger(__name__)
 
 def build_reminder_message(habit):
     """Формирует текст напоминания о привычке."""
-    message = (
-        "Напоминание о привычке!\n\n"
-        f"Я буду {habit.action} в {habit.time.strftime('%H:%M')} в {habit.place}."
-    )
+    message = "Напоминание о привычке!\n\n" f"Я буду {habit.action} в {habit.time.strftime('%H:%M')} в {habit.place}."
     if habit.reward:
         message += f"\nВознаграждение после выполнения: {habit.reward}."
     if habit.related_habit_id:

@@ -1,3 +1,1 @@
-from django.contrib import admin
-
-# Register your models here.
+# Административная панель для приложения telegram_bot не используется.

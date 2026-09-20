@@ -1,3 +1,1 @@
-from django.shortcuts import render
-
-# Create your views here.
+# HTTP-эндпоинты для приложения telegram_bot не требуются.
