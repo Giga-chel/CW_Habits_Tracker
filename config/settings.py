@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from datetime import timedelta
 from pathlib import Path
 
+from celery.schedules import crontab
+
 import environ
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -126,3 +128,14 @@ SPECTACULAR_SETTINGS = {
 # Telegram
 TELEGRAM_BOT_TOKEN = env("TELEGRAM_BOT_TOKEN", default="")
 TELEGRAM_BOT_NAME = env("TELEGRAM_BOT_NAME", default="habit_tracker_bot")
+
+# Celery
+CELERY_BROKER_URL = env("CELERY_BROKER_URL", default="redis://localhost:6379/0")
+CELERY_RESULT_BACKEND = env("CELERY_RESULT_BACKEND", default="redis://localhost:6379/0")
+
+CELERY_BEAT_SCHEDULE = {
+    "send-habit-reminders": {
+        "task": "telegram_bot.tasks.send_habit_reminders",
+        "schedule": crontab(),  # каждую минуту
+    },
+}
