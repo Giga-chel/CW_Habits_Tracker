@@ -13,6 +13,12 @@ djangorestframework = "^3.18.1"
 djangorestframework-simplejwt = "^5.5.1"
 django-environ = "^0.14.0"
 psycopg2-binary = "^2.9.13"
+django-cors-headers = "^4.9.0"
+drf-spectacular = "^0.30.0"
+requests = "^2.34.2"
+python-telegram-bot = "^22.8"
+celery = "^5.6.3"
+redis = "^8.1.0"
 
 
 [build-system]
@@ -25,4 +31,24 @@ dev = [
     "black (>=26.5.1,<27.0.0)",
     "isort (>=9.0.1,<10.0.0)",
     "coverage (>=7.16.1,<8.0.0)"
+]
+
+[tool.black]
+line-length = 119
+extend-exclude = "/migrations/"
+
+[tool.isort]
+profile = "black"
+line_length = 119
+skip_glob = ["*/migrations/*"]
+
+[tool.coverage.run]
+source = ["config", "users", "habits", "telegram_bot"]
+omit = [
+    "*/migrations/*",
+    "*/tests.py",
+    "manage.py",
+    "config/wsgi.py",
+    "config/asgi.py",
+    "telegram_bot/management/*",
 ]
